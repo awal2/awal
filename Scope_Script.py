@@ -34,7 +34,7 @@ To run py script in IPython (which opens automatically in browser),
 >>> '%'run fname (where '%' is without quotes
 					and fname is py script without .py extension)
 In this case:
->>> '%'run future
+>>> '%'run Scope_Script
 
 '''
 
