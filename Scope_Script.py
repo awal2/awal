@@ -161,7 +161,7 @@ class Source(object):
 		#cnt_ar: the array which we find cnts on. use zsum to count all cells.
 		#img: from which bckgd is calc'd
 		#cnt_thresh: the min pixel value from cnt_ar that will be a contour
-		#thresh: threshold for what doesn't counts as bckgd.
+		#thresh: threshold for what doesn't count as bckgd.
 		if cnt_ar == None:
 			self.zsum()
 			cnt_ar = self.My_Zsum
@@ -287,15 +287,24 @@ class Contours(Source):
 		display(copy_)
 
 
-	def filter_cnts(self,  minVal, maxVal, min_area=7, max_area=300, canny=False, array=None): #Changed!!
-		if self.all_contours == None:
+	def filter_cnts(self,  minVal, maxVal, min_area=0, max_area=250, canny=False, array=None): #Changed!!
+		if self.all_contours == None: #####change^^^
 			self.contours(canny=canny, array=array, minVal=minVal, maxVal=maxVal)
 
 		all_cnts = np.copy(self.all_contours)
+		###
+		self.all_contours[0] = np.array([[[190,497]]], dtype=np.int32)
+		self.all_contours[1] = np.array([[[5,5]]], dtype=np.int32)
+		### chagnge^^!!
 		original = np.copy(self.original)
+
 
 		filt_cnt=[cnt for ind, cnt in enumerate(all_cnts) if max_area>=cv2.contourArea(cnt, oriented=True)>=min_area] #changed oriented=True bc I was having double counts of some contours.
 		self.filtered_contours = filt_cnt
+
+		####CHANGE below.
+		self.filtered_contours[0] = np.array([[[190,497]]], dtype=np.int32)
+		self.filtered_contours[1] = np.array([[[5,5]]], dtype=np.int32)
 
 
 	def contour_means(self,  minVal, maxVal, _3D=False, original=None, canny=False, array=None):
@@ -472,7 +481,7 @@ class Analyze(Contours, Source):
 		window = signal.general_gaussian(4, p=0.5, sig=100)
 		filtered = signal.fftconvolve(window, data)
 		filtered = (np.average(data)/np.average(filtered))*filtered
-		filtered = filtered[1:-2] #truncates bad boundaries from fftconvolve
+		filtered = filtered[4:-5] #truncates bad boundaries from fftconvolve
 		original_filtered = np.copy(filtered)
 
 		bline=self.baseline_als(filtered, lam=lam, p=p, niter=niter)
