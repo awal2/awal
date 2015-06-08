@@ -25,7 +25,6 @@ import java.util.*;
 
 public class MontyHall
 {
-
 	private int wins = 0;
 	private int gamesPlayed = 0;	
 
@@ -43,7 +42,6 @@ public class MontyHall
 		int randomNum = rand.nextInt((max - min) + 1) + min;
 		return randomNum;
 	}
-
 
 	/* Returns index of door with car behind it. */
 	private int chooseCarDoor()
@@ -121,7 +119,6 @@ public class MontyHall
 
 		/*  If switching, can't choose revealed door. */		
 		possibledoors.remove(revealedDoor);
-
 
 		if (switchDoor == true)
 		{
