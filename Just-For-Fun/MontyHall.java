@@ -25,8 +25,8 @@ import java.util.*;
 public class MontyHall
 {
 
-	public int wins = 0;
-	public int gamesPlayed = 0;	
+	private int wins = 0;
+	private int gamesPlayed = 0;	
 
 	/* Create empty framework (bool array) for doors. */
 	private static boolean[] buildDoors()
