@@ -19,7 +19,6 @@ import java.text.DecimalFormat;
  * Longest sequence up to 178,913,277 found at 169,941,673 with length 953.
  */
 
-
 public class FastCollatz
 {
 	static long intRange;
