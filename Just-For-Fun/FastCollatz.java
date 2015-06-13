@@ -1,7 +1,4 @@
 // Author: Alex Walczak, 2015.
-import java.util.Collections;
-import java.util.PriorityQueue;
-import java.util.LinkedList;
 import java.text.DecimalFormat;
 
 // Euler Project #14 Solution.
