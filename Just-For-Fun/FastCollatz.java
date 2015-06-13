@@ -73,7 +73,6 @@ public class FastCollatz
 		long origx = x;
 		while ( x != 1 )
 		{
-			long long_x;
 			allLenArray[ (int) origx ] += 1;
 			x=getNext(x);
 
