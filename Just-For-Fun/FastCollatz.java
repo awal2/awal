@@ -4,6 +4,7 @@ import java.util.PriorityQueue;
 import java.util.LinkedList;
 import java.text.DecimalFormat;
 
+// Euler Project #14 Solution.
 // Fast calculation of the integer with the longest Collatz sequence of a set of integers from 1 to max,
 // and the length of this sequence.
 // Crashes when maxint exceeds 178,913,277. Finds longest sequence at 169,941,673 with length 953.
