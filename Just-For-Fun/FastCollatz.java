@@ -13,7 +13,7 @@ import java.text.DecimalFormat;
  * $ java FastCollatz 1 10 100 27 971 2000 178913277
  *
  * Longest sequence up to 1 found at 0 with length 0.
- * Longest s * equence up to 10 found at 9 with length 19.
+ * Longest sequence up to 10 found at 9 with length 19.
  * Longest sequence up to 100 found at 97 with length 118.
  * Longest sequence up to 27 found at 27 with length 111.
  * Longest sequence up to 971 found at 871 with length 178.
